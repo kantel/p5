@@ -1,15 +1,15 @@
-import p5
+from p5 import *
 
 def setup():
-    p5.size(400, 200)
-    p5.title("Dein Titel hier …")
+    size(400, 200)
+    title("Dein Titel hier …")
 
 def draw():
-    # p5.background(255, 100, 150)
+    background(255, 100, 150)
     center = (width / 2, height / 2)
-    p5.fill(0)
-    p5.rect_mode("RADIUS")
-    p5.square(center, 50)
+    fill(100, 255, 150)
+    rect_mode("RADIUS")
+    square(center, 50)
     # print("After square()")
 
-p5.run()
+run()
