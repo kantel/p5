@@ -4,6 +4,7 @@
 # Smoothly scaling size with the sin() function.
 
 import p5
+import math
 
 diameter = None
 angle = 0
@@ -24,9 +25,9 @@ def draw():
 
     p5.background(100)
 
-    d1 = 10 + (p5.sin(angle) * diameter / 2) + diameter / 2;
-    d2 = 10 + (p5.sin(angle + p5.PI / 2) * diameter / 2) + diameter / 2;
-    d3 = 10 + (p5.sin(angle + p5.PI) * diameter / 2) + diameter / 2;
+    d1 = 10 + (math.sin(angle) * diameter / 2) + diameter / 2;
+    d2 = 10 + (math.sin(angle + math.pi / 2) * diameter / 2) + diameter / 2;
+    d3 = 10 + (math.sin(angle + math.pi) * diameter / 2) + diameter / 2;
 
     p5.circle((0, height / 2), d1)
     p5.circle((width / 2, height / 2), d2)
