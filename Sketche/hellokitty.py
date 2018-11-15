@@ -7,15 +7,16 @@ import os
 file_path = os.path.dirname(os.path.abspath(__file__))
 os.chdir(file_path)
 
-stepsize = 45
+tilesize = 90
+step = 15
 
 def setup():
     global kitty, xpos, ypos
     p5.size(400, 400)
     # Funzt zur Zeit noch nicht, aber das nächste Release soll den Titel wieder anzeigen.
     # p5.title("Dein Titel hier …")
-    xpos = width/2 - stepsize
-    ypos = height/2 - stepsize
+    xpos = width/2 - tilesize/2
+    ypos = height/2 - tilesize/2
     kitty = p5.load_image("images/kitty.png")
 
 def draw():
@@ -25,12 +26,12 @@ def draw():
 def key_pressed():
     global xpos, ypos
     if key == "UP":
-        ypos -= stepsize
+        ypos -= step
     elif key == "DOWN":
-        ypos += stepsize
+        ypos += step
     elif key == "RIGHT":
-        xpos += stepsize
+        xpos += step
     elif key == "LEFT":
-        xpos -= stepsize
+        xpos -= step
 
 p5.run(frame_rate = 30)
