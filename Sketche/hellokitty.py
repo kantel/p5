@@ -1,4 +1,4 @@
-from p5 import *
+import p5
 import os
 
 # Hier wird der Pfad zum Verzeichnis des ».py«-Files gesetzt
@@ -11,16 +11,16 @@ stepsize = 45
 
 def setup():
     global kitty, xpos, ypos
-    size(400, 400)
+    p5.size(400, 400)
     # Funzt zur Zeit noch nicht, aber das nächste Release soll den Titel wieder anzeigen.
     # title("Dein Titel hier …")
     xpos = width/2 - stepsize
     ypos = height/2 - stepsize
-    kitty = load_image("images/kitty.png")
+    kitty = p5.load_image("images/kitty.png")
 
 def draw():
-    background(235, 215, 182)
-    image(kitty, (xpos, ypos))
+    p5.background(235, 215, 182)
+    p5.image(kitty, (xpos, ypos))
 
 def key_pressed():
     global xpos, ypos
@@ -33,6 +33,6 @@ def key_pressed():
     elif key == "LEFT":
         xpos -= stepsize
     elif key == "ESC":
-        exit()
+        p5.exit()
 
-run()
+p5.run()
