@@ -1,13 +1,13 @@
-from p5 import *
+import p5
 import random as r
 
 class Ball(object):
 
     def __init__(self):
         self.r = r.randint(8, 12)
-        self.vel = Vector(1, 1)*r.uniform(2.0, 6.0)
-        self.dir = Vector(-1.5, 1.5)
-        self.pos = Vector(r.randint(0, width), r.randint(0, height))
+        self.vel = p5.Vector(1, 1)*r.uniform(2.0, 6.0)
+        self.dir = p5.Vector(-1.5, 1.5)
+        self.pos = p5.Vector(r.randint(0, width), r.randint(0, height))
         self.red = (r.randint(100, 255))
         self.green = (r.randint(0, 150))
         self.blue = (r.randint(0, 255))
@@ -17,9 +17,9 @@ class Ball(object):
         self.pos.y += self.vel.y*self.dir.y
 
     def display(self):
-        fill(self.red, self.green, self.blue)
-        no_stroke()
-        circle((self.pos.x, self.pos.y), self.r*2)
+        p5.fill(self.red, self.green, self.blue)
+        p5.no_stroke()
+        p5.circle((self.pos.x, self.pos.y), self.r*2)
 
     def checkEdges(self):
         # rechter Rand
@@ -38,16 +38,16 @@ class Ball(object):
 balls = []
 
 def setup():
-    size(640, 480)
-    # title("Bouncing Ball")
+    p5.size(640, 480)
+    # p5.title("Bouncing Ball")
     for _ in range(25):
         balls.append(Ball())
 def draw():
-    background(0, 0, 0)
+    p5.background(0, 0, 0)
     for ball in balls:
         ball.display()
         ball.checkEdges()
         ball.update()
 
-run()
+p5.run()
 

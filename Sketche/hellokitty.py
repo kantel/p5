@@ -13,7 +13,7 @@ def setup():
     global kitty, xpos, ypos
     p5.size(400, 400)
     # Funzt zur Zeit noch nicht, aber das nächste Release soll den Titel wieder anzeigen.
-    # title("Dein Titel hier …")
+    # p5.title("Dein Titel hier …")
     xpos = width/2 - stepsize
     ypos = height/2 - stepsize
     kitty = p5.load_image("images/kitty.png")
@@ -32,7 +32,5 @@ def key_pressed():
         xpos += stepsize
     elif key == "LEFT":
         xpos -= stepsize
-    elif key == "ESC":
-        p5.exit()
 
-p5.run()
+p5.run(frame_rate = 30)

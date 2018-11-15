@@ -10,13 +10,12 @@ os.chdir(file_path)
 def setup():
     p5.size(400, 200)
     # Funzt zur Zeit noch nicht, aber das nächste Release soll den Titel wieder anzeigen.
-    # title("Dein Titel hier …")
+    # p5.title("Dein Titel hier …")
 
 def draw():
     pass
 
 def key_pressed():
-    if p5.key == "ESC":
-        exit()
+    pass
 
 p5.run()
