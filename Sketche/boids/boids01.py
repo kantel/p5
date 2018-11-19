@@ -36,8 +36,6 @@ class Boid():
         
 
 boids = []
-# boid1 = Boid(WIDTH/2, HEIGHT/2)
-# boid2 = Boid(WIDTH/2, HEIGHT/2)
 
 def setup():
     global bg
