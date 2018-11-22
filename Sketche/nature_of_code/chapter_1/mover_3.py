@@ -50,7 +50,7 @@ def setup():
     mover = Mover()
 
 def draw():
-    p5.background(235, 215, 182)
+    p5.background(43, 62, 80)
     
     mover.update()
     mover.check_boundaries()

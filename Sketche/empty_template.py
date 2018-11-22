@@ -13,7 +13,7 @@ def setup():
     # p5.title("Dein Titel hier …")
 
 def draw():
-    pass
+    p5.background(43, 62, 80)
 
 def key_pressed():
     pass
