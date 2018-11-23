@@ -14,7 +14,7 @@ class PVector():
     
     def get(self):
         v = PVector(self.x, self.y)
-        return v
+        return(v)
 
 # -- /neu 21.01.18 -- #
     
@@ -100,6 +100,18 @@ class PVector():
         return(result)
     
     def __str__(self):
-        return("(" + str(self.x) + ", " + str(self.y) + ")")
+        return("[ " + str(self.x) + ", " + str(self.y) + " ]")
         
 # -- /neu 19.11.18 -- #
+
+# -- neu 23.11.18 -- #
+
+    @classmethod
+    def random2D(cls):
+        x = random.uniform(-1, 1)
+        y = random.uniform(-1, 1)
+        v = cls(x, y)
+        v.normalize()
+        return(v)
+
+# -- /neu 23.11.18 -- #

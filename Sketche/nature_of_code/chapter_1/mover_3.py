@@ -18,9 +18,7 @@ class Mover(object):
         self.r = 15
     
     def update(self):
-        # self.acceleration = PVector.random2D()
-        self.acceleration = PVector(p5.random_uniform(-1, 1), p5.random_uniform(-1, 1))
-        self.acceleration.normalize()
+        self.acceleration = PVector.random2D()
         # self.acceleration.mult(0.5)
         self.acceleration.mult(p5.random_uniform(2))
         self.velocity.add(self.acceleration)
