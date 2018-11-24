@@ -2,11 +2,11 @@
 
 [P5 (Python)](http://cognitiones.kantel-chaos-team.de/programmierung/creativecoding/processing/p5py.html) hat mich so inspiriert, daß ich angefangen habe, die Processing (Java) Beispielprogramme aus *Daniel Shiffmans* wunderbarem Buch »The Nature of Code« mit P5 nachzuprogrammieren. Dieses Tutorial ist das erste einer geplanten Reihe und soll gleichzeitig so etwas wie ein Streßtest sein, um die Leistungsfähigkeit und Fehlerfreiheit von P5 zu testen, schließlich ist die Software noch *beta*.
 
-Zwar besitzt natürlich auch P5 eine Vektoren-Klasse (sogar für zwei- **und** dreidimensionale Vektoren), aber da ich – ursprünglich für die [Nodebox 1](http://cognitiones.kantel-chaos-team.de/programmierung/creativecoding/nodebox/nodebox.html) – schon einmal die Klasse `PVector` nachprogrammiert hatte, habe ich auf sie zurückgegriffen. Sie hat keine Abhängigkeiten von P5 und funktioniert damit auch mit anderen Python-Paketen. Allerdings unterstützt diese nur zweidimensionale Vektoren, aber für meine Fälle reicht dies aus.
+Zwar besitzt natürlich auch P5 eine Vektoren-Klasse (sogar für zwei- **und** dreidimensionale Vektoren), aber da ich – ursprünglich für die [Nodebox 1](http://cognitiones.kantel-chaos-team.de/programmierung/creativecoding/nodebox/nodebox.html) – schon einmal die Klasse `PVector` nachprogrammiert hatte, habe ich auf sie zurückgegriffen. Sie hat keine Abhängigkeiten von P5 und funktioniert damit auch mit anderen Python-Paketen. Allerdings unterstützt diese nur zweidimensionale Vektoren, aber für meine Fälle reicht das aus.
 
 Über diese Klasse `PVector` hatte ich schon mehrmals berichtet (zuletzt [hier](http://blog.schockwellenreiter.de/2018/11/2018111902.html) und [hier](http://blog.schockwellenreiter.de/2018/11/2018112301.html)), daher setze ich sie für dieses Tutorial einfach als bekannt voraus. Ihr könnt sie Euch von meinem [GitHub-Repo](https://github.com/kantel/pvector) herunterladen und das *Readme* dort enthält auch eine kleine Dokumentation der Klasse.
 
-Das Hauptprogramm in diesem Teil ist immer gleich, lediglich die Klasse `Mover` enthält die jeweiligen Änderungen. Das Programm (ohne die Klasse `Mover` sieht so aus:
+Das Hauptprogramm in diesem Teil ist – bis auf die letzte Version – immer gleich, lediglich die Klasse `Mover` enthält die jeweiligen Änderungen. Das Programm (ohne die Klasse `Mover` sieht so aus:
 
 ~~~python
 import p5
@@ -89,7 +89,7 @@ class Mover(object):
         self.location.add(self.velocity)
 ~~~
 
-Nun startet der Kreis in der Mitte des Fensters und der Geschwindigkeits und Richtungsvektor verharrt zu Beginn auf `(0, 0)`. Die Beschleunigung wird in P5 bei jedem Frame-Durchlauf dazuaddiert, daher muß sie relativ klein ausfallen. Doch selbst dann wird sie sehr schnell immer größer, daher habe ich ihr mit `topspeed` ein Limit gesetzt.
+Nun startet der Kreis in der Mitte des Fensters und der Geschwindigkeits- und Richtungsvektor verharrt zu Beginn auf `(0, 0)`. Die Beschleunigung wird in P5 bei jedem Frame-Durchlauf hinzuaddiert, daher muß sie relativ klein ausfallen. Doch selbst dann wird sie sehr schnell immer größer, daher habe ich ihr mit `topspeed` ein Limit gesetzt.
 
 In der `update()`-Methode wird erst die Beschleunigung zur Geschwindigkeit hinzuaddiert, dann wird überprüft, ob sie das Limit erreicht hat und schließlich – wie gehabt – ändert sie durch Addition den Ortsvektor.
 
@@ -201,6 +201,8 @@ def draw():
 p5.run()
 ~~~
 
+Ich habe zuerst einmal global eine `movers[]`-Liste erzeugt, die ich dann im `setup()` mit `numMovers` gefüllt habe. Die Schleife in der `draw()`Funktion iteriert dann über alle `mover in movers`, um ihre Methoden abzufragen.
+
 Wenn Ihr das Programm so laufen laßt, werdet Ihr feststellen, daß die Kreise wieder weit über das Ziel hinausschießen. Ich habe daher noch einmal an den Parametern geschraubt.
 
 ![Mover 5](images/mover05.jpg)
@@ -217,6 +219,6 @@ und eine weitere Verkleinerung des Normierungsfaktors in der `update()`-Methode:
 dir.mult(0.1)
 ~~~
 
-Die zwanzig Kreise zogen noch flüssig über meinen Monitor, brachten aber die Kühlung meines betagten MacBook Pros aus dem Jahre 2009 ganz schön ins Blasen. Auf neueren und leistungsfähigeren Rechnern dürfte da aber auch noch Luft nach oben sein. Schraubt daher ruhig an den Parametern weiter herum und entdeckt, welchen Einfluß sie auf das Programmgeschehen haben.
+Die zwanzig Kreise zogen noch flüssig über meinen Monitor, brachten aber die Kühlung meines betagten MacBook Pro aus dem Jahre 2009 ganz schön ins Blasen. Auf neueren und leistungsfähigeren Rechnern dürfte da aber auch noch Luft nach oben sein. Schraubt daher ruhig an den Parametern weiter herum und entdeckt, welchen Einfluß sie auf das Programmgeschehen haben.
 
 Den Quellcode dieser Skripte findet Ihr ebenfalls auf GitHub in meinem [P5-Repositorium](https://github.com/kantel/p5).
