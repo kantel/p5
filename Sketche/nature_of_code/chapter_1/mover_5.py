@@ -59,4 +59,5 @@ def draw():
         mover.update()
         mover.check_boundaries()
         mover.display()
+        
 p5.run()
