@@ -69,6 +69,8 @@ Die `update()`-Methode addiert den Richtungs- und Geschwindigkeitsvektor (`veloc
 
 Die Methode `check_boundaries()` habe ich gegenüber der Version von *Daniel Shiffman* leicht verändert: Der Kreis soll erst vollständig aus dem Bildschirmfenster verschwunden sein, bevor er auf der gegenüberliegenden Seite wieder auftaucht. Das ergibt die Illusion einer flüssigeren Bewegung.
 
+<div style="page-break-after: always;"></div>
+
 ![Mover 1](images/mover01.jpg)
 
 Und so gleitet der lila-farbene Kreis majästetisch über das Fenster. Dies mag zwar zuerst einmal den Programmierer erfreuen, wird natürlich aber auf Dauer etwas langweilig. Daher habe ich in einer zweiten Version dem Kreis auch noch einen Beschleunigungsvektor (`acceleration`) verpaßt. Dafür waren nur wenige Änderungen an der Klasse `Mover` notwendig:
