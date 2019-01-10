@@ -10,7 +10,7 @@ maxiter = 20
 
 
 def setup():
-    p5.size(100, 100)
+    p5.size(400, 400)
     # Funzt zur Zeit noch nicht, aber das nächste Release soll den Titel wieder anzeigen.
     # p5.title("Dein Titel hier …")
     # p5.color_mode("HSB", 255, 100, 100)
