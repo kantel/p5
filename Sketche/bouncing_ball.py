@@ -39,7 +39,7 @@ balls = []
 
 def setup():
     p5.size(640, 480)
-    # p5.title("Bouncing Ball")
+    p5.title("Bouncing Ball")
     for _ in range(25):
         balls.append(Ball())
 def draw():
