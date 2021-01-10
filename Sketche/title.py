@@ -1,7 +1,10 @@
 from p5 import *
 
 def setup():
-    size(200, 200)
-    title("Hallo Wörld")
+    title("🐍 Jörgs Python Sketch 🐍".encode("utf-8"))
+    
+
+def draw():
+    background(245, 245, 245)
 
 run()

@@ -8,9 +8,9 @@ file_path = os.path.dirname(os.path.abspath(__file__))
 os.chdir(file_path)
 
 def setup():
-    p5.size(400, 200)
-    # Funzt zur Zeit noch nicht, aber das nächste Release soll den Titel wieder anzeigen.
-    # p5.title("Dein Titel hier …")
+    p5.size(400, 400)
+    # Title funzt zur Zeit immer noch nicht, aber es gibt einen Workaround mit ».encode("utf-8")«.
+    p5.title("Dein Titel hier …".encode("utf-8"))
 
 def draw():
     p5.background(43, 62, 80)

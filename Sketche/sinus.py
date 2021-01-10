@@ -13,7 +13,7 @@ def setup():
     global diameter
 
     p5.size(640, 360)
-    # p5.title("Sinus")
+    p5.title("Sinus".encode("utf-8"))
 
     diameter = height - 10
 

@@ -38,16 +38,16 @@ class Ball(object):
 balls = []
 
 def setup():
-    p5.size(640, 480)
-    p5.title("Bouncing Ball")
-    for _ in range(25):
+    p5.size(400, 400)
+    # Title funzt zur Zeit immer noch nicht, aber es gibt einen Workaround mit ».encode("utf-8")«.
+    p5.title("Bouncing Ball".encode("utf-8"))
+    for _ in range(30):
         balls.append(Ball())
 def draw():
-    p5.background(0, 0, 0)
+    p5.background(43, 62, 80)
     for ball in balls:
         ball.display()
         ball.checkEdges()
         ball.update()
 
 p5.run()
-

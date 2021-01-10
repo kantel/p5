@@ -7,7 +7,7 @@ import os
 file_path = os.path.dirname(os.path.abspath(__file__))
 os.chdir(file_path)
 
-WIDTH = 630
+WIDTH = 450
 HEIGHT = 450
 
 class Kitty():
@@ -39,8 +39,8 @@ kitty = Kitty(WIDTH, HEIGHT)
 
 def setup():
     p5.size(WIDTH, HEIGHT)
-    # Funzt zur Zeit noch nicht, aber das nächste Release soll den Titel wieder anzeigen.
-    # p5.title("Dein Titel hier …")
+    # Funzt zur Zeit immer noch nicht, aber es gibt einen Workaround mit ».encode("utf-8")«.
+    p5.title("Klasse, Kitty!".encode("utf-8"))
     kitty.loadPic()
 
 def draw():
