@@ -1,7 +1,7 @@
 from p5 import *
 
 def setup():
-    title("🐍 Jörgs Python Sketch 🐍".encode("utf-8"))
+    title("🐍 Jörgs Python Sketch 🐍")
     
 
 def draw():

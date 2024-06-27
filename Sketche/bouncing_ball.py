@@ -36,12 +36,12 @@ class Ball(object):
             self.dir.y *= -1
 
 balls = []
+num_balls = 30
 
 def setup():
     p5.size(400, 400)
-    # Title funzt zur Zeit immer noch nicht, aber es gibt einen Workaround mit ».encode("utf-8")«.
-    p5.title("Bouncing Ball".encode("utf-8"))
-    for _ in range(30):
+    p5.title("Bouncing Ball")
+    for _ in range(num_balls):
         balls.append(Ball())
 def draw():
     p5.background(43, 62, 80)

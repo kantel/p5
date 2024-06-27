@@ -2,7 +2,7 @@ import p5
 import os
 
 # Hier wird der Pfad zum Verzeichnis des ».py«-Files gesetzt
-# Erspart einem das Herumgehample in TextMate mit dem os.getcwd()
+# Erspart einem das Herumgehample im Editor mit dem os.getcwd()
 # und os.path.join()
 file_path = os.path.dirname(os.path.abspath(__file__))
 os.chdir(file_path)
@@ -33,14 +33,13 @@ class Kitty():
             self.y = 0
         elif self.y >= self.h - self.tilesize:
             self.y = self.h - self.tilesize
-        p5.image(self.img, (self.x, self.y))
+        p5.image(self.img, self.x, self.y)
 
 kitty = Kitty(WIDTH, HEIGHT)
 
 def setup():
     p5.size(WIDTH, HEIGHT)
-    # Funzt zur Zeit immer noch nicht, aber es gibt einen Workaround mit ».encode("utf-8")«.
-    p5.title("Klasse, Kitty!".encode("utf-8"))
+    p5.title("Klasse, Kitty!")
     kitty.loadPic()
 
 def draw():

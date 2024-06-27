@@ -11,8 +11,7 @@ maxiter = 20
 
 def setup():
     size(400, 400)
-    # Funzt zur Zeit noch nicht, aber es gibt einen Workaround.
-    title("Mandelbrötchen".encode("utf-8"))
+    title("Mandelbrötchen")
     
 
 def draw():
